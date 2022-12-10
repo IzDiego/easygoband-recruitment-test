@@ -6,7 +6,7 @@ import columns from './providersTable/Columns';
 
 export default defineComponent({
     setup() {
-        
+
     },
     data() {
         return {
@@ -14,15 +14,15 @@ export default defineComponent({
             columns,
         }
     },
-    methods:{
-        async fetchProviders(){
+    methods: {
+        async fetchProviders() {
             const res = await getProviders();
             this.providersData = res;
         }
     },
     async created() {
         await this.fetchProviders();
-  }
+    },
 })
 
 </script>
@@ -30,7 +30,7 @@ export default defineComponent({
 <template>
     <div class="providers-table">
         <a-table bordered :data-source="providersData" :columns="columns()">
-            
+
         </a-table>
     </div>
 </template>
@@ -46,7 +46,7 @@ h3 {
     font-size: 1.2rem;
 }
 
-.providers-table{
+.providers-table {
     font-size: 1.2rem;
 }
 

@@ -16,8 +16,7 @@ const columns = (filteredInfo?: any, filterOptions?: any) => [
   {
     title: "Name",
     dataIndex: "name",
-    width: 150,
-    //sorter: (a: any, b: any) => a.user.localeCompare(b.user),
+    sorter: (a: IProvider, b: IProvider) => a.name.localeCompare(b.name),
     /* filteredValue: filteredInfo?.user || null,
     filters: filterOptions.user,
     onFilter: (value: string, record: any) => {
@@ -35,7 +34,6 @@ const columns = (filteredInfo?: any, filterOptions?: any) => [
   {
     title: "Modified date",
     dataIndex: "shift",
-    width: 100,
     customRender: ({ text, record }: ICustomRenderProviders) => {
       return moment(record.modified).utc().format("YYYY-MM-DD HH:mm");
     },
